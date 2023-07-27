@@ -1,4 +1,4 @@
-﻿import datetime
+import datetime
 
 print("Hello, from the script!")
 
@@ -58,10 +58,14 @@ def ExecuteEndpoint():
                     sess_TotalAmount_AmountUnit)
 
                 ResultCtx.Command = "N2P"
-                ResultCtx.SubscriptionId = SmCtx.SubscriptionId
-                ResultCtx.McId = SmCtx.McId
-                ResultCtx.Flow = "cartConfirmPage"
+                # ResultCtx.SubscriptionId = SmCtx.SubscriptionId
+                # ResultCtx.McId = SmCtx.McId
+                # ResultCtx.Flow = "cartConfirmPage"
                 ResultCtx.EndpointId = "{entityid}-GetM2Data".format(entityid = entityid)
+
+                ResultCtx.PythonName = "mana-cr",  #TODO: set it!!
+                ResultCtx.Version = "",     #TODO: set it!!
+                ResultCtx.DaId = "mana",        #TODO: set it!!
             else:
                 #//get rate
                 sess_RateRequest_Amount = sess_Amount_AmountUnit
@@ -173,23 +177,36 @@ def ExecuteEndpoint():
                     sess_DestinationFee_AmountUnit)
 
                 ResultCtx.Command = "N2P"
-                ResultCtx.SubscriptionId = SmCtx.SubscriptionId
-                ResultCtx.McId = SmCtx.McId
-                ResultCtx.Flow = "exchangePage"
-                ResultCtx.EndpointId = "{entityid}-GetMexData".format(entityid = entityid)
+                # ResultCtx.SubscriptionId = SmCtx.SubscriptionId
+                # ResultCtx.McId = SmCtx.McId
+                # ResultCtx.Flow = "exchangePage"
+                ResultCtx.EndpointId = "{entityid}-GetMexData".format(entityid = entityid)                
+
+                ResultCtx.PythonName = "mana-cr",  #TODO: set it!!
+                ResultCtx.Version = "",     #TODO: set it!!
+                ResultCtx.DaId = "mana",        #TODO: set it!!
 
         elif endpointCase == "GetMexData":
             ResultCtx.Command = "N2P"
-            ResultCtx.SubscriptionId = SmCtx.SubscriptionId
-            ResultCtx.McId = SmCtx.McId
-            ResultCtx.Flow = "cartConfirmPage"
+            # ResultCtx.SubscriptionId = SmCtx.SubscriptionId
+            # ResultCtx.McId = SmCtx.McId
+            # ResultCtx.Flow = "cartConfirmPage"
             ResultCtx.EndpointId = "{entityid}-GetM2Data".format(entityid = entityid)
+            
+            ResultCtx.PythonName = "mana-cr",  #TODO: set it!!
+            ResultCtx.Version = "",     #TODO: set it!!
+            ResultCtx.DaId = "mana",        #TODO: set it!!
 
         elif endpointCase == "GetM2Data":
             SmCtx.ExecuteSession(entityid)
 
             ResultCtx.Command = "N2P"
-            ResultCtx.SubscriptionId = SmCtx.SubscriptionId
-            ResultCtx.McId = SmCtx.McId
-            ResultCtx.Flow = "pin"
+            # ResultCtx.SubscriptionId = SmCtx.SubscriptionId
+            # ResultCtx.McId = SmCtx.McId
+            # ResultCtx.Flow = "pin"
             ResultCtx.EndpointId = "{entityid}-ConfirmPin".format(entityid = entityid)
+
+            ResultCtx.PythonName = "mana-cr",  #TODO: set it!!
+            ResultCtx.Version = "",     #TODO: set it!!
+            ResultCtx.DaId = "mana",        #TODO: set it!!
+
